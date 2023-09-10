@@ -12,15 +12,21 @@ jobs:
       - name: Set Up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '14' 
+          node-version: '14'
       - name: Install Dependencies
-        working-directory: mpower-agency/devops-services/blob/master/s1/package.json
         run: sudo npm install
       - name: Update Node.js Version
-        run: sudo npm install -g n && sudo n latest
+        run: |
+          sudo npm install -g n
+          sudo n latest
+          sudo n use latest
+          sudo node --version
+          sudo npm --version
+
       - name: Commit and Push Changes
         run: |
-         git config user.name "shibam-max"
+          git config user.name "shibam-max"
           git config user.email "shibamsamaddar1999@gmail.com"
           git commit -am "Update Node.js version"
           git push
+
