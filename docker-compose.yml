@@ -1,0 +1,41 @@
+version: '3'
+
+services:
+  s1:
+    build:
+      context: ./s1
+    container_name: s1
+    ports:
+      - "0.0.0.0:8081:8081"
+    networks:
+      - mynetwork
+
+      
+  s2:
+    build:
+      context: ./s2
+    container_name: s2
+    ports:
+      - "0.0.0.0:8082:8082"
+    networks:
+      - mynetwork
+
+ 
+
+  s3:
+    build:
+      context: ./s3
+    container_name: s3
+    ports:
+      - "0.0.0.0:8083:8083"
+    environment:
+      - S1_URL=http://s1:8081
+      - S2_URL=http://s2:8082
+    depends_on:
+      - s1
+      - s2
+    networks:
+      - mynetwork
+
+networks:
+  mynetwork:
