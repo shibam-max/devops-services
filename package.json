@@ -1,0 +1,19 @@
+{
+  "name": "devops-services",
+  "version": "1.0.0",
+  "description": "3 services for to test devops",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shibam-max/devops-services.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shibam-max/devops-services/issues"
+  },
+  "homepage": "https://github.com/shibam-max/devops-services#readme"
+}
