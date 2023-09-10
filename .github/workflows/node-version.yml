@@ -14,9 +14,9 @@ jobs:
         with:
           node-version: '14' 
       - name: Install Dependencies
-        run: npm install
+        run: sudo npm install
       - name: Update Node.js Version
-        run: npm install -g n && n latest
+        run: sudo npm install -g n && sudo n latest
       - name: Commit and Push Changes
         run: |
          git config user.name "shibam-max"
