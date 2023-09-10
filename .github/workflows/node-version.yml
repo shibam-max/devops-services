@@ -14,6 +14,7 @@ jobs:
         with:
           node-version: '14' 
       - name: Install Dependencies
+        working-directory: mpower-agency/devops-services/blob/master/s1/package.json
         run: sudo npm install
       - name: Update Node.js Version
         run: sudo npm install -g n && sudo n latest
