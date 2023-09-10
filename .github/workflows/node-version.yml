@@ -1,0 +1,25 @@
+name: Update Node.js Version
+on:
+  push:
+    branches:
+      - master
+jobs:
+  update-node-version:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check Out Code
+        uses: actions/checkout@v2
+      - name: Set Up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14' 
+      - name: Install Dependencies
+        run: npm install
+      - name: Update Node.js Version
+        run: npm install -g n && n latest
+      - name: Commit and Push Changes
+        run: |
+         git config user.name "shibam-max"
+          git config user.email "shibamsamaddar1999@gmail.com"
+          git commit -am "Update Node.js version"
+          git push
