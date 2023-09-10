@@ -8,7 +8,7 @@ services:
     ports:
       - "0.0.0.0:8081:8081"
     networks:
-      - mynetwork1
+      - mynetwork
 
       
   s2:
@@ -18,7 +18,7 @@ services:
     ports:
       - "0.0.0.0:8082:8082"
     networks:
-      - mynetwork1
+      - mynetwork
 
  
 
@@ -35,7 +35,7 @@ services:
       - s1
       - s2
     networks:
-      - mynetwork1
+      - mynetwork
 
 networks:
-  mynetwork1:
+  mynetwork:
